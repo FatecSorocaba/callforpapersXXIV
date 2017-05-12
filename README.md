@@ -1,24 +1,17 @@
-# README
+# Call for Papers Semana da Tecnologia XXIV
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esse é Call for Papers da Semana da Tecnologia XXIV da Fatec Sorocaba.
+Call for Papers é uma plataforma de envio de palestras. O interessados podem enviar duas propostas para serem analizadas pela organização.
 
-Things you may want to cover:
+## Run
 
-* Ruby version
+É necessário possuir Ruby e PostgreSQL instalado.
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+git clone https://github.com/FatecSorocaba/callforpapersXXIV.git # Você pode trocar pelo ssh se preferir
+cd callforpapersXXIV
+gem install bundler
+bundler install # instale as dependências
+rails server # suba o servidor
+```
