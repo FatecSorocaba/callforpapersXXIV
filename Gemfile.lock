@@ -43,6 +43,10 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     cloudinary (1.8.0)
       aws_cf_signer
       rest-client
@@ -158,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  carrierwave
   cloudinary
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
@@ -172,4 +177,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
