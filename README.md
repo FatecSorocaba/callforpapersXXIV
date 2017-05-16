@@ -15,3 +15,14 @@ gem install bundler
 bundler install # instale as dependências
 rails server # suba o servidor
 ```
+## Run with Docker
+
+É necessário possuir o Docker e o Docker-compose instalado:
+
+
+[Docker installation guide](https://blog.codeminer42.com/instala%C3%A7%C3%A3o-do-docker-e-docker-compose-9b0195dff4e)
+
+
+```shell
+docker-compose up
+```
