@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <h2>Speaker</h2>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :speaker_name %>
@@ -23,7 +25,7 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_area :email %>
+    <%= form.text_field :email %>
   </div>
 
   <div class="field">
@@ -33,7 +35,7 @@
 
   <div class="field">
     <%= form.label :biography %>
-    <%= form.text_field :biography %>
+    <%= form.text_area :biography %>
   </div>
 
   <div class="field">
@@ -42,6 +44,8 @@
   </div>
 
   <%= form.fields_for :talk, @talk do |talk_form| %>
+    <h2>Talk</h2>
+    
     <div class="field">
       <%= talk_form.label :title %>
       <%= talk_form.text_field :title, id: :talk_title %>
