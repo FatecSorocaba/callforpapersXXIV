@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class Speaker < ApplicationRecord
   has_one :talk
 
@@ -12,4 +14,22 @@ class Speaker < ApplicationRecord
                       allow_blank: true
 
   mount_uploader :picture, PictureUploader
+
+  before_create :set_uuid
+
+  def set_uuid
+    loop do
+      @uuid = SecureRandom.uuid
+      break unless Speaker.uuid_exit? @uuid
+    end
+    self.uuid = @uuid
+  end
+
+  def to_param
+    self.uuid
+  end
+
+  def self.uuid_exit?(uuid)
+    Speaker.find_by(uuid: uuid).present?
+  end
 end
