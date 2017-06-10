@@ -2,12 +2,95 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
     <style>
-      /* Email styles need to be inline */
+      html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        div[style*="margin: 16px 0"] {
+            margin:0 !important;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        table table table {
+            table-layout: auto;
+        }
+
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        .mobile-link--footer a,
+        a[x-apple-data-detectors] {
+            color:inherit !important;
+            text-decoration: underline !important;
+        }
     </style>
   </head>
 
-  <body>
-    <%= yield %>
+  <body width="100%" bgcolor="#ffffff" style="margin: 0;">
+    <center style="width: 100%; background: #ffffff;">
+      <div style="max-width: 600px; margin: auto;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;">
+          <tr>
+            <td bgcolor="#ffffff">
+              <img src="http://i.imgur.com/wQFqhYh.jpg" width="600" height="" alt="alt_text" border="0" align="center" style="width: 100%; max-width: 600px; background: #dddddd; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
+            </td>
+          </tr>
+        </table>
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+            <td style="padding-top: 40px; padding-bottom: 20px;padding-left: 10px; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
+              <%= yield %>
+            <br>
+            </td>
+          </tr>
+        </table>
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 650px;">
+          <tr>
+            <td style="padding-top: 40px;padding-bottom: 10px;width: 100%;font-size: 20px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #888888;">
+              <webversion style="color:#cccccc; text-decoration:underline; font-weight: bold;"><a href="https://fatecsorocaba.github.io/semana-da-tecnologia/" target="_blank">24ª Semana da Tecnologia - ADS</a></webversion>
+            </td>
+          </tr>
+        </table>
+
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+          <tr>
+            <td style="padding: 10px 10px;width: 100%;font-size: 14px; font-family: sans-serif; mso-height-rule: exactly; line-height:14px; text-align: center; color: #888888;">
+              Organização da Semana da Tecnologia<br><span>Análise e Desenvolvimento de Sistemas</span><br>
+              <br><br>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
   </body>
 </html>

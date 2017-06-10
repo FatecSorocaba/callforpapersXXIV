@@ -25,6 +25,7 @@ class SpeakersController < ApplicationController
     @speaker = Speaker.new(create_params)
 
     if @speaker.save
+      SpeakerMailer.submitted_talk(@speaker).deliver_later
       redirect_to edit_speaker_path(@speaker), notice: 'Speaker was successfully created.'
     else
       render :new
