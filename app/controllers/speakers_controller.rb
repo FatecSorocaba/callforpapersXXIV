@@ -25,7 +25,7 @@ class SpeakersController < ApplicationController
     @speaker = Speaker.new(create_params)
 
     if @speaker.save
-      redirect_to @speaker, notice: 'Speaker was successfully created.'
+      redirect_to edit_speaker_path(@speaker), notice: 'Speaker was successfully created.'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class SpeakersController < ApplicationController
   # PATCH/PUT /speakers/1
   def update
     if @talk.update(talk_params) && @speaker.update(speaker_params)
-      redirect_to @speaker, notice: 'Speaker was successfully updated.'
+      redirect_to edit_speaker_path(@speaker), notice: 'Speaker was successfully updated.'
     else
       render :edit
     end
@@ -49,8 +49,8 @@ class SpeakersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_speaker
-      @speaker = Speaker.find(params[:id])
-      @talk = @speaker.talk
+      @speaker = Speaker.find_by(uuid: params[:uuid])
+      @talk = @speaker.talk unless @speaker.nil?
     end
 
     # Only allow a trusted parameter "white list" through.
