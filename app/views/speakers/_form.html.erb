@@ -21,6 +21,56 @@
     <%= form.file_field :picture %>
   </div>
 
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_area :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :biography %>
+    <%= form.text_field :biography %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+
+  <%= form.fields_for :talk, @talk do |talk_form| %>
+    <div class="field">
+      <%= talk_form.label :title %>
+      <%= talk_form.text_field :title, id: :talk_title %>
+    </div>
+
+    <div class="field">
+      <%= talk_form.label :description %>
+      <%= talk_form.text_area :description, id: :talk_description %>
+    </div>
+
+    <div class="field">
+      <%= talk_form.label :theme %>
+      <%= talk_form.select(:theme) do %>
+        <% [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]].each do |theme| -%>
+          <%= content_tag(:option, theme.first, value: theme.last) %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= talk_form.label :required_knowledge %>
+      <%= talk_form.select(:required_knowledge) do %>
+        <% [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]].each do |theme| -%>
+          <%= content_tag(:option, theme.first, value: theme.last) %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

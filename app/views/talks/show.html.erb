@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @talk.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @talk.description %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @talk.theme %>
+</p>
+
+<p>
+  <strong>Required knowledge:</strong>
+  <%= @talk.required_knowledge %>
+</p>
+
+<%= link_to 'Edit', edit_talk_path(@talk) %> |
+<%= link_to 'Back', talks_path %>

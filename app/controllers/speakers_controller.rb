@@ -13,6 +13,7 @@ class SpeakersController < ApplicationController
   # GET /speakers/new
   def new
     @speaker = Speaker.new
+    @talk = Talk.new
   end
 
   # GET /speakers/1/edit
@@ -21,7 +22,7 @@ class SpeakersController < ApplicationController
 
   # POST /speakers
   def create
-    @speaker = Speaker.new(speaker_params)
+    @speaker = Speaker.new(create_params)
 
     if @speaker.save
       redirect_to @speaker, notice: 'Speaker was successfully created.'
@@ -32,7 +33,7 @@ class SpeakersController < ApplicationController
 
   # PATCH/PUT /speakers/1
   def update
-    if @speaker.update(speaker_params)
+    if @talk.update(talk_params) && @speaker.update(speaker_params)
       redirect_to @speaker, notice: 'Speaker was successfully updated.'
     else
       render :edit
@@ -49,10 +50,21 @@ class SpeakersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_speaker
       @speaker = Speaker.find(params[:id])
+      @talk = @speaker.talk
     end
 
     # Only allow a trusted parameter "white list" through.
+    def create_params
+      params.require(:speaker).permit(:name, :picture, :company, :biography,
+      :website, :email, talk_attributes: [:title, :description, :theme, :required_knowledge])
+    end
+
     def speaker_params
-      params.require(:speaker).permit(:name, :picture)
+      params.require(:speaker).permit(:name, :picture, :company, :biography,
+      :website, :email)
+    end
+
+    def talk_params
+      params.require(:speaker).require(:talk_attributes).permit(:title, :description, :theme, :required_knowledge)
     end
 end
