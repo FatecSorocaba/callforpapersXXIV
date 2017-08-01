@@ -78,7 +78,6 @@ body a {
   background-color: #FBFBFB;
   padding: 40px;
 
-
   hr {
     width: 700px;
   }
@@ -88,12 +87,11 @@ body a {
     display: block;
     text-align: center;
     padding: 5px;
+
     option {
       text-align: center;
     }
-
   }
-
 }
 
 .input {
@@ -133,6 +131,7 @@ body a {
   justify-content: space-around;
   background-color: #9c27b0;
   margin-top: 40px;
+
   h3 {
     color: #FFF;
     font-size: 30px;
@@ -144,6 +143,6 @@ and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
 
-  
+
 
 }

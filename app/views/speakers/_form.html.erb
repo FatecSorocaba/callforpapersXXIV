@@ -10,53 +10,53 @@
       </ul>
     </div>
   <% end %>
-
   <div class="form">
     <h2>Palestrante</h2>
     <div class="field">
-      <%= form.label :nome %>
-      <%= form.text_field :name, id: :speaker_name, class: :input %>
+      <%= form.label :name, 'Nome' %>
+      <%= form.text_field :name, id: :speaker_name, class: 'input' %>
     </div>
 
     <div class="field">
-      <%= form.label :foto %>
-      <%= form.file_field :picture, class: :inputpicture %>
+      <%= form.label :picture, 'Foto' %>
+      <%= form.file_field :picture, class: 'inputpicture' %>
     </div>
 
     <div class="field">
       <%= form.label :email %>
-      <%= form.text_field :email, class: :input %>
+      <%= form.text_field :email, class: 'input' %>
     </div>
 
     <div class="field">
-      <%= form.label :empresa %>
-      <%= form.text_field :company, class: :input%>
+      <%= form.label :company, 'Empresa' %>
+      <%= form.text_field :company, class: 'input'%>
     </div>
 
     <div class="field">
-      <%= form.label :biografia %>
-      <%= form.text_area :biography, class: :textarea %>
+      <%= form.label :biography, 'Biografia' %>
+      <%= form.text_area :biography, class: 'textarea' %>
     </div>
 
     <div class="field">
       <%= form.label :website %>
-      <%= form.text_field :website, class: :input%>
+      <%= form.text_field :website, class: 'input'%>
     </div>
+
+    <h2>Talk</h2>
     <%= form.fields_for :talk, @talk do |talk_form| %>
-      <h2>Talk</h2>
 
       <div class="field">
-        <%= talk_form.label :titulo %>
-        <%= talk_form.text_field :title, id: :talk_title, class: :input %>
+        <%= talk_form.label :title, 'Titulo' %>
+        <%= talk_form.text_field :title, id: :talk_title, class: 'input' %>
       </div>
 
       <div class="field">
-        <%= talk_form.label :descrição %>
-        <%= talk_form.text_area :description, id: :talk_description, class: :textarea %>
+        <%= talk_form.label :description, 'Descrição' %>
+        <%= talk_form.text_area :description, id: :talk_description, class: 'textarea' %>
       </div>
 
       <div class="field">
-        <%= talk_form.label :tema %>
+        <%= talk_form.label :theme, 'Tema' %>
         <%= talk_form.select(:theme) do %>
           <% [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]].each do |theme| -%>
             <%= content_tag(:option, theme.first, value: theme.last) %>
@@ -65,7 +65,7 @@
       </div>
 
       <div class="field">
-        <%= talk_form.label :conhecimento_necessario %>
+        <%= talk_form.label :required_knowledge, 'Conhecimento Necessario' %>
         <%= talk_form.select(:required_knowledge) do %>
           <% [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]].each do |theme| -%>
             <%= content_tag(:option, theme.first, value: theme.last) %>
@@ -75,7 +75,7 @@
     <% end %>
 
     <div class="actions">
-      <%= form.submit 'Criar Talk', class: :buttonsubmit%>
+      <%= form.submit 'Criar Talk', class: 'buttonsubmit'%>
     </div>
   </div>
 
