@@ -134,7 +134,7 @@ body a {
 
   h3 {
     color: #FFF;
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -143,6 +143,22 @@ and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
 
-
-
+  body {
+    font-size: 30px;
+    h1 {
+      font-size: 65px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+    p {
+        font-size: 40px;
+      }
+    h3, h4, h5, h6 {
+      font-size: 40px;
+    }
+  }
+  .form {
+    font-size: 25px;
+  }
 }
