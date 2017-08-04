@@ -32,11 +32,12 @@ body a {
 .header {
   display: flex;
   justify-content: center;
-  background-color: #9c27b0;
+  background-color: $background1;
 }
 
 .header h1 {
   color: #FFF;
+  font-size: 40px;
 }
 
 .about {
@@ -73,7 +74,7 @@ body a {
   color: $background2;
   margin: 40px;
   font-family: 'Lato', sans-serif;
-  box-shadow: 1px 1px 1px #888888;
+  box-shadow: 2px 2px 2px 2px #888888;
   width: 600px;
   background-color: #FBFBFB;
   padding: 40px;
@@ -87,6 +88,7 @@ body a {
     display: block;
     text-align: center;
     padding: 5px;
+    margin: 20px;
 
     option {
       text-align: center;
@@ -99,6 +101,7 @@ body a {
   text-align: center;
   height: 25px;
   display: block;
+  margin: 20px;
 }
 
 .inputpicture {
@@ -106,16 +109,18 @@ body a {
   display: block;
   height: 25px;
   color: #000;
+  margin: 20px;
 }
 
 .textarea {
   @include input-default;
   box-sizing: border-box;
   display: block;
+  margin: 20px;
 }
 
 .buttonsubmit {
-  background-color: #9c27b0;
+  background-color: $background1;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -129,7 +134,7 @@ body a {
 .footer {
   display: flex;
   justify-content: space-around;
-  background-color: #9c27b0;
+  background-color: $background1;
   margin-top: 40px;
 
   h3 {
