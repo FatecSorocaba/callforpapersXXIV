@@ -10,72 +10,72 @@
       </ul>
     </div>
   <% end %>
-
-  <h2>Speaker</h2>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :speaker_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
-  </div>
-
-  <div class="field">
-    <%= form.label :biography %>
-    <%= form.text_area :biography %>
-  </div>
-
-  <div class="field">
-    <%= form.label :website %>
-    <%= form.text_field :website %>
-  </div>
-
-  <%= form.fields_for :talk, @talk do |talk_form| %>
-    <h2>Talk</h2>
-    
+  <div class="form">
     <div class="field">
-      <%= talk_form.label :title %>
-      <%= talk_form.text_field :title, id: :talk_title %>
+      <%= form.label :name, 'Nome' %>
+      <%= form.text_field :name, id: :speaker_name, class: 'input' %>
     </div>
 
     <div class="field">
-      <%= talk_form.label :description %>
-      <%= talk_form.text_area :description, id: :talk_description %>
+      <%= form.label :picture, 'Foto' %>
+      <%= form.file_field :picture, class: 'inputpicture' %>
     </div>
 
     <div class="field">
-      <%= talk_form.label :theme %>
-      <%= talk_form.select(:theme) do %>
-        <% [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]].each do |theme| -%>
-          <%= content_tag(:option, theme.first, value: theme.last) %>
+      <%= form.label :email %>
+      <%= form.text_field :email, class: 'input' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :company, 'Empresa' %>
+      <%= form.text_field :company, class: 'input'%>
+    </div>
+
+    <div class="field">
+      <%= form.label :biography, 'Biografia' %>
+      <%= form.text_area :biography, class: 'textarea', rows: '5' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :website %>
+      <%= form.text_field :website, class: 'input'%>
+    </div>
+
+    <h2 id="titleTalk">Talk</h2>
+    <%= form.fields_for :talk, @talk do |talk_form| %>
+
+      <div class="field">
+        <%= talk_form.label :title, 'Titulo' %>
+        <%= talk_form.text_field :title, id: :talk_title, class: 'input' %>
+      </div>
+
+      <div class="field">
+        <%= talk_form.label :description, 'Descrição' %>
+        <%= talk_form.text_area :description, id: :talk_description, class: 'textarea', rows: '5' %>
+      </div>
+
+      <div class="field">
+        <%= talk_form.label :theme, 'Tema' %>
+        <%= talk_form.select(:theme) do %>
+          <% [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]].each do |theme| -%>
+            <%= content_tag(:option, theme.first, value: theme.last) %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-    <div class="field">
-      <%= talk_form.label :required_knowledge %>
-      <%= talk_form.select(:required_knowledge) do %>
-        <% [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]].each do |theme| -%>
-          <%= content_tag(:option, theme.first, value: theme.last) %>
+      <div class="field">
+        <%= talk_form.label :required_knowledge, 'Conhecimento Necessario' %>
+        <%= talk_form.select(:required_knowledge) do %>
+          <% [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]].each do |theme| -%>
+            <%= content_tag(:option, theme.first, value: theme.last) %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit 'Criar Talk', class: 'buttonsubmit'%>
+    </div>
   </div>
+
 <% end %>

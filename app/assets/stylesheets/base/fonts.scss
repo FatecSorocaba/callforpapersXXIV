@@ -1,1 +1,204 @@
+@import "./colors";
+@import "./variables";
 
+body {
+  background-color: #FAFAFA;
+  font-family: 'Lato', sans-serif;
+}
+
+body a {
+    text-decoration: none !important;
+}
+
+.body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  background-color: #FAFAFA;
+}
+
+.body-content h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.body-content h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: $background1;
+  background-image: image-url("bg-header.jpg");
+  background-size: cover;
+  background-position: left;
+  background-attachment: fixed;
+  min-height: 75vh;
+  align-items: center;
+  z-index: -2;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background-color: rgba(122,54,157,.6);
+    z-index: 1;
+    content: "";
+  }
+}
+
+.header h1 {
+  color: #FFF;
+  font-size: 100px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+.about p {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  color:#424242;
+  font-size: 20px;
+}
+
+.form-speaker {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 550px;
+  background-color: #FBFBFB;
+  padding: 40px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  color: $background1;
+  margin: 40px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  box-shadow: .5px .5px .5px .5px #888888;
+  width: 600px;
+  background-color: #FBFBFB;
+  padding: 40px;
+  border-radius: 5px;
+
+  hr {
+    width: 700px;
+  }
+
+  select {
+    @include input-default;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: 20px;
+
+    option {
+      text-align: center;
+    }
+  }
+}
+
+.input {
+  @include input-default;
+  text-align: center;
+  height: 25px;
+  display: block;
+  margin: 20px;
+}
+
+.inputpicture {
+  text-align: center;
+  display: block;
+  height: 40px;
+  color: #000;
+  margin: 20px;
+}
+
+.textarea {
+  @include input-default;
+  box-sizing: border-box;
+  display: block;
+  margin: 20px;
+}
+
+.buttonsubmit {
+  background-color: $background1;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: $background1;
+  margin-top: 40px;
+
+  h3 {
+    color: #FFF;
+    font-size: 20px;
+  }
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+
+  body {
+    font-size: 40px;
+    h1 {
+      font-size: 65px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+    p {
+        font-size: 35px;
+      }
+    h3, h4, h5, h6 {
+      font-size: 40px;
+    }
+    #signup {
+      font-size: 45px;
+    }
+    #titleTalk {
+      font-size: 45px;
+    }
+  }
+
+  .form {
+    font-size: 30px;
+  }
+}

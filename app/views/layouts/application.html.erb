@@ -3,12 +3,35 @@
   <head>
     <title>CfpXXIV</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lora" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header">
+      <h1>Call 4 Papers</h1>
+    </header>
+    <section class="about">
+      <h2>Sobre a Semana da Tecnlogia</h2>
+      <p>A Semana da Tecnologia é um evento anual da Faculdade de Tecnologia de Sorocaba(FATEC), nele são
+        apresentados palestras e ministrados cursos sobre os assuntos de maior destaque no mercado. Este ano
+        será realizada a 24º edição do evento, sendo que será a segunda edição que está sendo organizada pelos
+        alunos do curso de Análise e Desenvolvimento de Sistemas.
+      </p>
+      <p>
+        Para saber mais entre no <a href=" https://fatecsorocaba.github.io/semana-da-tecnologia/"><i>site oficial do evento</i></a>
+      </p>
+    </section>
+    <div class="body-content">
+      <%= yield %>
+    </div>
+    <footer class="footer">
+     <a href="https://github.com/FatecSorocaba"><h3>Github - FATEC SOROCABA</h3></a>
+     <a href=" https://fatecsorocaba.github.io/semana-da-tecnologia/"><h3>SETEC - Site Oficial</h3></a>
+     <a href="http://www.fatecsorocaba.edu.br/"><h3>FATEC SOROCABA - Site Oficial</h3></a>
+   </footer>
+
   </body>
 </html>

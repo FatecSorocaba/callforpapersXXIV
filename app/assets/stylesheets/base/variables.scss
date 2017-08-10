@@ -1,0 +1,15 @@
+@mixin input-default {
+  margin: 5px;
+  border: 0;
+  border-radius: 2px;
+  outline: 0;
+  width: 350px;
+  border-bottom: 3px solid $background2;
+  background: $inputInactive;
+  color: $text-color;
+
+  &:focus {
+    border-bottom: 3px solid $background1;
+    background: $inputActive;
+  }
+}
