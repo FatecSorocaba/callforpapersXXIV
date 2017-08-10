@@ -20,12 +20,12 @@ body a {
 }
 
 .body-content h1 {
-  font-size: 35px;
+  font-size: 40px;
   text-align: center;
 }
 
 .body-content h2 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -39,7 +39,6 @@ body a {
   background-attachment: fixed;
   min-height: 75vh;
   align-items: center;
-  margin-bottom: 10vh;
   z-index: -2;
 
   &::before {
@@ -66,6 +65,10 @@ body a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  h2 {
+    font-size: 30px;
+  }
 }
 
 .about p {
@@ -73,6 +76,7 @@ body a {
   margin: auto;
   padding: 20px;
   color:#424242;
+  font-size: 20px;
 }
 
 .form-speaker {
@@ -92,13 +96,15 @@ body a {
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
-  color: $background2;
+  color: $background1;
   margin: 40px;
+  font-size: 20px;
   font-family: 'Lato', sans-serif;
-  box-shadow: 2px 2px 2px 2px #888888;
+  box-shadow: .5px .5px .5px .5px #888888;
   width: 600px;
   background-color: #FBFBFB;
   padding: 40px;
+  border-radius: 5px;
 
   hr {
     width: 700px;
@@ -128,7 +134,7 @@ body a {
 .inputpicture {
   text-align: center;
   display: block;
-  height: 25px;
+  height: 40px;
   color: #000;
   margin: 20px;
 }
@@ -148,20 +154,9 @@ body a {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 10px;
-}
-
-.containerbuttonSignup {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10vh;
-}
-
-.buttonSignup {
-  margin: 0;
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
+  margin: 10px;
 }
 
 .footer {
@@ -172,7 +167,7 @@ body a {
 
   h3 {
     color: #FFF;
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
@@ -182,7 +177,7 @@ and (max-device-width : 568px)
 and (orientation : portrait) {
 
   body {
-    font-size: 30px;
+    font-size: 40px;
     h1 {
       font-size: 65px;
     }
@@ -190,18 +185,20 @@ and (orientation : portrait) {
       font-size: 50px;
     }
     p {
-        font-size: 40px;
+        font-size: 35px;
       }
     h3, h4, h5, h6 {
       font-size: 40px;
     }
+    #signup {
+      font-size: 45px;
+    }
+    #titleTalk {
+      font-size: 45px;
+    }
   }
 
   .form {
-    font-size: 25px;
-  }
-
-  .buttonSignup {
-    font-size: 80px;
+    font-size: 30px;
   }
 }
