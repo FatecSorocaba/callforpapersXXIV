@@ -1,6 +1,3 @@
-@import "./colors";
-@import "./variables";
-
 body {
   background-color: #FAFAFA;
   font-family: 'Lato', sans-serif;
@@ -111,7 +108,6 @@ body a {
   }
 
   select {
-    @include input-default;
     display: block;
     text-align: center;
     padding: 5px;
@@ -124,7 +120,6 @@ body a {
 }
 
 .input {
-  @include input-default;
   text-align: center;
   height: 25px;
   display: block;
@@ -140,7 +135,6 @@ body a {
 }
 
 .textarea {
-  @include input-default;
   box-sizing: border-box;
   display: block;
   margin: 20px;
