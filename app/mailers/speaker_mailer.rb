@@ -4,6 +4,6 @@ class SpeakerMailer < ApplicationMailer
   def submitted_talk(speaker)
     @speaker_name = speaker.name.split.first
     @edit_link = edit_speaker_url(speaker, host: ENV['HOST_LINK'])
-    mail(to: speaker.email, subject: 'Obrigado por enviar sua palestra!')
+    mail(to: speaker.email, subject: 'Obrigado por enviar sua proposta!')
   end
 end
