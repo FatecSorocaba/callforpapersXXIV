@@ -4,12 +4,12 @@
   border-radius: 2px;
   outline: 0;
   width: 350px;
-  border-bottom: 3px solid $background2;
+  border-bottom: 3px solid $secondaryBackground;
   background: $inputInactive;
   color: $text-color;
 
   &:focus {
-    border-bottom: 3px solid $background1;
+    border-bottom: 3px solid $primaryBackground;
     background: $inputActive;
   }
 }
