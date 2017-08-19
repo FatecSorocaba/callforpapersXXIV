@@ -1,0 +1,76 @@
+.form-speaker {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 550px;
+  background-color: #FBFBFB;
+  padding: 40px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  color: $primaryBackground;
+  margin: 40px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #888888;
+  width: 600px;
+  background-color: #FBFBFB;
+  padding: 40px;
+  border-radius: 5px;
+
+  hr {
+    width: 700px;
+  }
+
+  select {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: 20px;
+
+    option {
+      text-align: center;
+    }
+  }
+}
+
+.input {
+  text-align: center;
+  height: 25px;
+  display: block;
+  margin: 20px;
+}
+
+.input-picture {
+  text-align: center;
+  display: block;
+  height: 40px;
+  color: #000;
+  margin: 20px;
+}
+
+.text-area {
+  box-sizing: border-box;
+  display: block;
+  margin: 20px;
+}
+
+.button-submit {
+  background-color: $primaryBackground;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 10px;
+}
