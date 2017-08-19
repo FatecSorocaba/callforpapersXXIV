@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: $primaryBackground;
+  margin-top: 40px;
+
+  h3 {
+    color: #FFF;
+    font-size: 20px;
+  }
+}
