@@ -24,8 +24,9 @@ class SpeakersController < ApplicationController
   def create
     @speaker = Speaker.new(create_params)
 
+    puts domain
     if @speaker.save
-      SpeakerMailer.submitted_talk(@speaker, request.domain).deliver_now
+      SpeakerMailer.submitted_talk(@speaker, domain).deliver_now
       redirect_to edit_speaker_path(@speaker), notice: 'Speaker was successfully created.'
     else
       render :new
@@ -48,24 +49,32 @@ class SpeakersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_speaker
-      @speaker = Speaker.find_by(uuid: params[:uuid])
-      @talk = @speaker.talk unless @speaker.nil?
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_speaker
+    @speaker = Speaker.find_by(uuid: params[:uuid])
+    @talk = @speaker.talk unless @speaker.nil?
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def create_params
-      params.require(:speaker).permit(:name, :picture, :company, :biography,
-      :website, :email, talk_attributes: [:title, :description, :theme, :required_knowledge])
-    end
+  # Only allow a trusted parameter "white list" through.
+  def create_params
+    params.require(:speaker).permit(:name, :picture, :company, :biography,
+    :website, :email, talk_attributes: [:title, :description, :theme, :required_knowledge])
+  end
 
-    def speaker_params
-      params.require(:speaker).permit(:name, :picture, :company, :biography,
-      :website, :email)
-    end
+  def speaker_params
+    params.require(:speaker).permit(:name, :picture, :company, :biography,
+    :website, :email)
+  end
 
-    def talk_params
-      params.require(:speaker).require(:talk_attributes).permit(:title, :description, :theme, :required_knowledge)
+  def talk_params
+    params.require(:speaker).require(:talk_attributes).permit(:title, :description, :theme, :required_knowledge)
+  end
+
+  def domain
+    if request.subdomains.empty?
+      request.domain
+    else
+      "#{request.subdomains.join('.')}.#{request.domain}"
     end
+  end
 end
