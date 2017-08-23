@@ -18,7 +18,7 @@
 
     <div class="field">
       <%= form.label :picture, 'Foto' %>
-      <%= form.file_field :picture, class: 'inputpicture' %>
+      <%= form.file_field :picture, class: 'input-picture' %>
     </div>
 
     <div class="field">
@@ -33,7 +33,7 @@
 
     <div class="field">
       <%= form.label :biography, 'Biografia' %>
-      <%= form.text_area :biography, class: 'textarea', rows: '5' %>
+      <%= form.text_area :biography, class: 'text-area', rows: '5' %>
     </div>
 
     <div class="field">
@@ -41,7 +41,7 @@
       <%= form.text_field :website, class: 'input'%>
     </div>
 
-    <h2 id="titleTalk">Talk</h2>
+    <h2 class="titleTalk">Talk</h2>
     <%= form.fields_for :talk, @talk do |talk_form| %>
 
       <div class="field">
@@ -51,7 +51,7 @@
 
       <div class="field">
         <%= talk_form.label :description, 'Descrição' %>
-        <%= talk_form.text_area :description, id: :talk_description, class: 'textarea', rows: '5' %>
+        <%= talk_form.text_area :description, id: :talk_description, class: 'text-area', rows: '5' %>
       </div>
 
       <div class="field">
@@ -74,7 +74,7 @@
     <% end %>
 
     <div class="actions">
-      <%= form.submit 'Submeter Proposta', class: 'buttonsubmit'%>
+      <%= form.submit 'Submeter Proposta', class: 'button-submit'%>
     </div>
   </div>
 
