@@ -1,9 +1,9 @@
 <%= form_with(model: speaker, local: true) do |form| %>
   <% if speaker.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+      <h2 class="error-title"><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
 
-      <ul>
+      <ul class="error-messages">
       <% speaker.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -12,18 +12,18 @@
   <% end %>
   <div class="form">
     <div class="field">
-      <%= form.label :name, 'Nome' %>
-      <%= form.text_field :name, id: :speaker_name, class: 'input' %>
+      <%= form.label :name, 'Nome*' %>
+      <%= form.text_field :name, id: :speaker_name, class: 'input', :required => true %>
     </div>
 
     <div class="field">
-      <%= form.label :picture, 'Foto' %>
-      <%= form.file_field :picture, class: 'input-picture' %>
+      <%= form.label :picture, 'Foto*' %>
+      <%= form.file_field :picture, class: 'input-picture', :required => true %>
     </div>
 
     <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email, class: 'input' %>
+      <%= form.label :email, 'Email*' %>
+      <%= form.text_field :email, class: 'input', :required => true%>
     </div>
 
     <div class="field">
@@ -32,8 +32,8 @@
     </div>
 
     <div class="field">
-      <%= form.label :biography, 'Biografia' %>
-      <%= form.text_area :biography, class: 'text-area', rows: '5' %>
+      <%= form.label :biography, 'Biografia*' %>
+      <%= form.text_area :biography, class: 'text-area', rows: '5', :required => true %>
     </div>
 
     <div class="field">
@@ -45,13 +45,13 @@
     <%= form.fields_for :talk, @talk do |talk_form| %>
 
       <div class="field">
-        <%= talk_form.label :title, 'Titulo' %>
-        <%= talk_form.text_field :title, id: :talk_title, class: 'input' %>
+        <%= talk_form.label :title, 'Titulo*' %>
+        <%= talk_form.text_field :title, id: :talk_title, class: 'input', :required => true %>
       </div>
 
       <div class="field">
-        <%= talk_form.label :description, 'Descrição' %>
-        <%= talk_form.text_area :description, id: :talk_description, class: 'text-area', rows: '5' %>
+        <%= talk_form.label :description, 'Descrição*' %>
+        <%= talk_form.text_area :description, id: :talk_description, class: 'text-area', rows: '5', :required => true %>
       </div>
 
       <div class="field">
@@ -63,7 +63,7 @@
         <% end %>
       </div>
 
-      <div class="field">
+      <div class="field select-knowledge">
         <%= talk_form.label :required_knowledge, 'Conhecimento Necessario' %>
         <%= talk_form.select(:required_knowledge) do %>
           <% [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]].each do |theme| -%>
