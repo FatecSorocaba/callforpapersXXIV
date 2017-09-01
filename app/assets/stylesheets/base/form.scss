@@ -39,6 +39,12 @@
       text-align: center;
     }
   }
+
+  .select-knowledge {
+    select {
+      margin-left: 50px;
+    }
+  }
 }
 
 .input {
@@ -54,6 +60,7 @@
   height: 40px;
   color: #000;
   margin: 20px;
+  margin-left: 50px;
 }
 
 .text-area {
@@ -73,4 +80,18 @@
   font-size: 20px;
   text-transform: uppercase;
   margin: 10px;
+}
+
+.error-messages {
+  list-style-type:decimal;
+
+  li {
+    font-size: 20px;
+    margin: 10px;
+    color: $primaryBackground;
+  }
+}
+
+.error-title {
+  color: $primaryBackground;
 }
