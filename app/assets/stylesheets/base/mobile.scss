@@ -24,6 +24,10 @@
     .titleTalk {
       font-size: 85px;
     }
+
+    .error-title {
+      font-size: 70px;
+    }
   }
 
   .about {
@@ -76,6 +80,19 @@
 
     label {
       font-size: 60px;
+    }
+
+    .select-knowledge {
+      select {
+        margin-left: 150px;
+      }
+    }
+  }
+
+  .error-messages {
+    li {
+      font-size: 60px;
+      margin: 50px;
     }
   }
 
