@@ -1,7 +1,7 @@
 <%= form_with(model: speaker, local: true) do |form| %>
   <% if speaker.errors.any? %>
     <div id="error_explanation">
-      <h2 class="error-title"><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved:</h2>
+      <h2 class="error-title"><%= pluralize(speaker.errors.count, "error") %> prohibited this speaker from being saved</h2>
 
       <ul class="error-messages">
       <% speaker.errors.full_messages.each do |message| %>
