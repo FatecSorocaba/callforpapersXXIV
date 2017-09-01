@@ -83,12 +83,12 @@
 }
 
 .error-messages {
-  list-style-type:decimal;
 
   li {
     font-size: 20px;
     margin: 10px;
     color: $primaryBackground;
+    text-align: center;
   }
 }
 
