@@ -24,7 +24,6 @@ class SpeakersController < ApplicationController
   def create
     @speaker = Speaker.new(create_params)
 
-    puts domain
     if @speaker.save
       SpeakerMailer.submitted_talk(@speaker, domain).deliver_now
       redirect_to edit_speaker_path(@speaker), notice: 'Speaker was successfully created.'
