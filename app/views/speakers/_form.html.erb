@@ -60,12 +60,12 @@
       </div>
 
       <div class="field">
-        <%= talk_form.label :theme, 'Tema' %>
+        <%= talk_form.label :theme, 'Tema*' %>
         <%= talk_form.select(:theme, [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]])%>
       </div>
 
       <div class="field select-knowledge">
-        <%= talk_form.label :required_knowledge, 'Conhecimento Necessario' %>
+        <%= talk_form.label :required_knowledge, 'Conhecimento Necessario*' %>
         <%= talk_form.select(:required_knowledge, [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]])%>
       </div>
     <% end %>
