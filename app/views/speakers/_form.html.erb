@@ -13,17 +13,17 @@
   <div class="form">
     <div class="field">
       <%= form.label :name, 'Nome*' %>
-      <%= form.text_field :name, id: :speaker_name, class: 'input', :required => true %>
+      <%= form.text_field :name, id: :speaker_name, class: 'input' %>
     </div>
 
     <div class="field">
       <%= form.label :picture, 'Foto*' %>
-      <%= form.file_field :picture, class: 'input-picture', :required => true %>
+      <%= form.file_field :picture, class: 'input-picture' %>
     </div>
 
     <div class="field">
       <%= form.label :email, 'Email*' %>
-      <%= form.text_field :email, class: 'input', :required => true%>
+      <%= form.text_field :email, class: 'input' %>
     </div>
 
     <div class="field">
@@ -33,7 +33,7 @@
 
     <div class="field">
       <%= form.label :biography, 'Biografia*' %>
-      <%= form.text_area :biography, class: 'text-area', rows: '5', :required => true %>
+      <%= form.text_area :biography, class: 'text-area', rows: '5' %>
     </div>
 
     <div class="field">
@@ -46,39 +46,27 @@
 
       <div class="field">
         <%= talk_form.label :kind, 'Tipo*' %>
-        <%= talk_form.select(:kind) do %>
-          <% [['Palestra', :talk], ['Lightning', :lightning], ['Curso', :course]].each do |kind| -%>
-            <%= content_tag(:option, kind.first, value: kind.last) %>
-          <% end %>
-        <% end %>
+        <%= talk_form.select(:kind, [['Palestra', :talk], ['Lightning', :lightning], ['Curso', :course]])%>
       </div>
 
       <div class="field">
         <%= talk_form.label :title, 'Titulo*' %>
-        <%= talk_form.text_field :title, id: :talk_title, class: 'input', :required => true %>
+        <%= talk_form.text_field :title, id: :talk_title, class: 'input' %>
       </div>
 
       <div class="field">
         <%= talk_form.label :description, 'Descrição*' %>
-        <%= talk_form.text_area :description, id: :talk_description, class: 'text-area', rows: '5', :required => true %>
+        <%= talk_form.text_area :description, id: :talk_description, class: 'text-area', rows: '5' %>
       </div>
 
       <div class="field">
         <%= talk_form.label :theme, 'Tema' %>
-        <%= talk_form.select(:theme) do %>
-          <% [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]].each do |theme| -%>
-            <%= content_tag(:option, theme.first, value: theme.last) %>
-          <% end %>
-        <% end %>
+        <%= talk_form.select(:theme, [['Web', :web], ['Games', :games], ['DevOps', :dev_ops], ['Carreira', :carrer], ['Design', :design], ['Mobile', :mobile], ['Análise', :analysis], ['Outros', :other]])%>
       </div>
 
       <div class="field select-knowledge">
         <%= talk_form.label :required_knowledge, 'Conhecimento Necessario' %>
-        <%= talk_form.select(:required_knowledge) do %>
-          <% [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]].each do |theme| -%>
-            <%= content_tag(:option, theme.first, value: theme.last) %>
-          <% end %>
-        <% end %>
+        <%= talk_form.select(:required_knowledge, [['Iniciante', :beginner], ['Médio', :medium], ['Avançado', :advanced]])%>
       </div>
     <% end %>
 
