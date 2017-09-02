@@ -13,6 +13,14 @@
     <header class="header">
       <h1>Call 4 Papers</h1>
     </header>
+    <% if admin_signed_in? %>
+      <section>
+        Logado como: <%= current_admin.email %>
+        <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %> 
+        <%= link_to 'New Admin', admins_new_admin_path %>
+        <%= link_to 'Tasks', speakers_path %>
+      </section>
+    <% end %>
     <section class="about">
       <h2>Sobre a Semana da Tecnologia</h2>
       <p>A Semana da Tecnologia é um evento anual da Faculdade de Tecnologia de Sorocaba (FATEC) que ocorre no mês de outubro, nele são
