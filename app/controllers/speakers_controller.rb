@@ -1,5 +1,6 @@
 class SpeakersController < ApplicationController
   before_action :set_speaker, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:index]
 
   # GET /speakers
   def index
