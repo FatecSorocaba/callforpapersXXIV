@@ -1,0 +1,23 @@
+<h2>Convide um palestrante!</h2>
+
+<% if notice %>
+  <%= notice %>
+<% end %>
+
+<%= form_tag("send_email", method: :post) do %>
+  <div class="form">
+    <div class="field">
+      <%= label_tag(:name, "Nome*:") %>
+      <%= text_field_tag(:name) %>
+    </div>
+
+    <div class="field">
+      <%= label_tag(:email, "Email*:") %>
+      <%= text_field_tag(:email) %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag("Enviar Convite", class: 'button-submit') %>
+    </div>
+  </div>
+<% end %>
