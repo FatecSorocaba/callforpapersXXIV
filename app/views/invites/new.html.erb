@@ -8,12 +8,12 @@
   <div class="form">
     <div class="field">
       <%= label_tag(:name, "Nome*:") %>
-      <%= text_field_tag(:name) %>
+      <%= text_field_tag(:name, nil, class: 'input') %>
     </div>
 
     <div class="field">
       <%= label_tag(:email, "Email*:") %>
-      <%= text_field_tag(:email) %>
+      <%= text_field_tag(:email, nil, class: 'input') %>
     </div>
 
     <div class="actions">
