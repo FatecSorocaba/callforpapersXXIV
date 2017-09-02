@@ -45,6 +45,15 @@
     <%= form.fields_for :talk, @talk do |talk_form| %>
 
       <div class="field">
+        <%= talk_form.label :kind, 'Tipo*' %>
+        <%= talk_form.select(:kind) do %>
+          <% [['Palestra', :talk], ['Lightning', :lightning], ['Curso', :course]].each do |kind| -%>
+            <%= content_tag(:option, kind.first, value: kind.last) %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="field">
         <%= talk_form.label :title, 'Titulo*' %>
         <%= talk_form.text_field :title, id: :talk_title, class: 'input', :required => true %>
       </div>
