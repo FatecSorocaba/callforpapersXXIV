@@ -22,6 +22,10 @@ class Admins::RegistrationsController < Devise::RegistrationsController
     redirect_to root_path
   end
 
+  def create
+    redirect_to root_path
+  end
+
   private
 
   def redirect_unauthenticated
