@@ -57,7 +57,7 @@ class SpeakersController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def create_params
     params.require(:speaker).permit(:name, :picture, :company, :biography,
-    :website, :email, talk_attributes: [:title, :description, :theme, :required_knowledge])
+    :website, :email, talk_attributes: [:kind, :title, :description, :theme, :required_knowledge])
   end
 
   def speaker_params
@@ -66,7 +66,7 @@ class SpeakersController < ApplicationController
   end
 
   def talk_params
-    params.require(:speaker).require(:talk_attributes).permit(:title, :description, :theme, :required_knowledge)
+    params.require(:speaker).require(:talk_attributes).permit(:kind, :title, :description, :theme, :required_knowledge)
   end
 
   def domain
