@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      admin:
+        one: 'Administrador(a)'
+        other: 'Administradores'
+    attributes:
+      admin:
+        email: 'Email'
+        password: 'Senha'

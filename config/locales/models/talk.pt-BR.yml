@@ -1,0 +1,30 @@
+pt-BR:
+  activerecord:
+    models:
+      talk:
+        one: 'Proposta'
+        other: 'Propostas'
+    attributes:
+      talk:
+        title: 'Título'
+        description: 'Descrição'
+        theme: 'Tema'
+        themes:
+          web: 'Web'
+          games: 'Jogos'
+          dev_ops: 'DevOps'
+          career: 'Carreira'
+          design: 'Design'
+          mobile: 'Dispositivos móveis'
+          analysis: 'Análise'
+          other: 'Outro'
+        required_knowledge: 'Conhecimento necessário'
+        required_knowledges:
+          beginner: 'Iniciante'
+          medium: 'Intermediário'
+          advanced: 'Avançado'
+        kind: 'Tipo'
+        kinds:
+          talk: 'Palestra'
+          lightning: 'Lightning'
+          course: 'Curso'

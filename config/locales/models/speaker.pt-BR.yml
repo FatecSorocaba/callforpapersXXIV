@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      speaker:
+        one: 'Palestrante'
+        other: 'Palestrantes'
+    attributes:
+      speaker:
+        name: 'Nome'
+        picture: 'Foto'
+        email: 'Email'
+        company: 'Empresa'
+        biography: 'Biografia'
+        website: 'Website'

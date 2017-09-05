@@ -15,10 +15,10 @@
     </header>
     <% if admin_signed_in? %>
       <section>
-        Logado como: <%= current_admin.email %>
-        <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %> 
+        Logged as: <%= current_admin.email %>
+        <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
         <%= link_to 'New Admin', new_admin_registration_path %>
-        <%= link_to 'Talks cadastradas', speakers_path %>
+        <%= link_to 'Speakers', speakers_path %>
       </section>
     <% end %>
     <section class="about">

@@ -12,27 +12,27 @@
   <% end %>
   <div class="form">
     <div class="field">
-      <%= form.label :name %>
+      <%= form.label :name, 'Nome*' %>
       <%= form.text_field :name, id: :speaker_name, class: 'input' %>
     </div>
 
     <div class="field">
-      <%= form.label :picture %>
+      <%= form.label :picture, 'Foto*' %>
       <%= form.file_field :picture, class: 'input-picture' %>
     </div>
 
     <div class="field">
-      <%= form.label :email %>
+      <%= form.label :email, 'Email*' %>
       <%= form.text_field :email, class: 'input' %>
     </div>
 
     <div class="field">
-      <%= form.label :company %>
+      <%= form.label :company, 'Empresa' %>
       <%= form.text_field :company, class: 'input'%>
     </div>
 
     <div class="field">
-      <%= form.label :biography %>
+      <%= form.label :biography, 'Biografia*' %>
       <%= form.text_area :biography, class: 'text-area', rows: '5' %>
     </div>
 
@@ -43,34 +43,35 @@
 
     <h2 class="titleTalk">Talk</h2>
     <%= form.fields_for :talk, @talk do |talk_form| %>
+
       <div class="field">
-        <%= talk_form.label :kind %>
+        <%= talk_form.label :kind, 'Tipo*' %>
         <%= talk_form.select :kind, Talk.kinds.keys.collect { |kind| [Talk.human_enum_name(:kind, kind), kind] }%>
       </div>
 
       <div class="field">
-        <%= talk_form.label :title %>
+        <%= talk_form.label :title, 'Titulo*' %>
         <%= talk_form.text_field :title, id: :talk_title, class: 'input' %>
       </div>
 
       <div class="field">
-        <%= talk_form.label :description %>
+        <%= talk_form.label :description, 'Descrição*' %>
         <%= talk_form.text_area :description, id: :talk_description, class: 'text-area', rows: '5' %>
       </div>
 
       <div class="field">
-        <%= talk_form.label :theme %>
+        <%= talk_form.label :theme, 'Tema*' %>
         <%= talk_form.select :theme, Talk.themes.keys.collect { |theme| [Talk.human_enum_name(:theme, theme), theme] }%>
       </div>
 
       <div class="field select-knowledge">
-        <%= talk_form.label :required_knowledge %>
+        <%= talk_form.label :required_knowledge, 'Conhecimento Necessario*' %>
         <%= talk_form.select :required_knowledge, Talk.required_knowledges.keys.collect { |required_knowledge| [Talk.human_enum_name(:required_knowledge, required_knowledge), required_knowledge] } %>
       </div>
     <% end %>
 
     <div class="actions">
-      <%= form.submit t('helpers.submit.send', model: Talk.model_name.human), class: 'button-submit'%>
+      <%= form.submit 'Submeter Proposta', class: 'button-submit'%>
     </div>
   </div>
 

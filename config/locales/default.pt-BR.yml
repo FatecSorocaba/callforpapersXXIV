@@ -1,49 +1,5 @@
 pt-BR:
   activerecord:
-    models:
-      speaker:
-        one: 'Palestrante'
-        other: 'Palestrantes'
-      talk:
-        one: 'Proposta'
-        other: 'Propostas'
-      admin:
-        one: 'Administrador(a)'
-        other: 'Administradores'
-    attributes:
-      speaker:
-        name: 'Nome'
-        picture: 'Foto'
-        email: 'Email'
-        company: 'Empresa'
-        biography: 'Biografia'
-        website: 'Website'
-      talk:
-        title: 'Título'
-        description: 'Descrição'
-        theme: 'Tema'
-        themes:
-          web: 'Web'
-          games: 'Jogos'
-          dev_ops: 'DevOps'
-          career: 'Carreira'
-          design: 'Design'
-          mobile: 'Dispositivos móveis'
-          analysis: 'Análise'
-          other: 'Outro'
-        required_knowledge: 'Conhecimento necessário'
-        required_knowledges:
-          beginner: 'Iniciante'
-          medium: 'Intermediário'
-          advanced: 'Avançado'
-        kind: 'Tipo'
-        kinds:
-          talk: 'Palestra'
-          lightning: 'Lightning'
-          course: 'Curso'
-      admin:
-        email: 'Email'
-        password: 'Senha'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -185,8 +141,8 @@ pt-BR:
     template:
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
-        one: 'Não foi possível gravar %{model}: 1 erro'
-        other: 'Não foi possível gravar %{model}: %{count} erros'
+        one: 'Não foi possível salvar %{model}: 1 erro'
+        other: 'Não foi possível salvar %{model}: %{count} erros'
   helpers:
     select:
       prompt: Por favor selecione
