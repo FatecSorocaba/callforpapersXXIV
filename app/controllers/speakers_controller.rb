@@ -26,7 +26,9 @@ class SpeakersController < ApplicationController
     @speaker = Speaker.new(create_params)
 
     if @speaker.save
-      SpeakerMailer.submitted_talk(@speaker, domain).deliver_now
+      SpeakerMailer.submitted_talk(@speaker, DomainUrlService.perform(
+                                request.domain, request.subdomains)).deliver_now
+
       redirect_to edit_speaker_path(@speaker), notice: 'Speaker was successfully created.'
     else
       render :new
@@ -68,13 +70,5 @@ class SpeakersController < ApplicationController
 
   def talk_params
     params.require(:speaker).require(:talk_attributes).permit(:kind, :title, :description, :theme, :required_knowledge)
-  end
-
-  def domain
-    if request.subdomains.empty?
-      request.domain
-    else
-      "#{request.subdomains.join('.')}.#{request.domain}"
-    end
   end
 end

@@ -9,6 +9,7 @@
   min-height: 75vh;
   align-items: center;
   z-index: -2;
+  position: relative;
 
   h1 {
     color: #FFF;
@@ -22,7 +23,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 75%;
+    height: 100%;
     background-color: rgba(122,54,157,.6);
     z-index: 1;
     content: "";
