@@ -3,6 +3,10 @@
 Esse é Call for Papers da Semana da Tecnologia XXIV da Fatec Sorocaba.
 Call for Papers é uma plataforma de envio de palestras. O interessados podem enviar duas propostas para serem analizadas pela organização.
 
+## Setup
+Para iniciar crie um arquivo .env e coloque as variáveis de ambiente necessárias  
+DEVISE_EMAIL_HOST=exemplo@mail.com
+
 ## Run
 
 É necessário possuir Ruby e PostgreSQL instalado.
