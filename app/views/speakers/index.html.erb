@@ -1,0 +1,15 @@
+<% @speakers.each do |speaker|  %>
+  <p><%= speaker.name %></p>
+  <p><%= speaker.email %></p>
+  <p><%= image_tag speaker.picture %></p>
+  <p><%= speaker.company %></p>
+  <p><%= speaker.biography %></p>
+  <p><%= speaker.website %></p>
+  <p><%= speaker.uuid %></p>
+  <p><%= speaker.id %></p>
+  <p><%= speaker.talk.title %></p>
+  <p><%= speaker.talk.description %></p>
+  <p><%= speaker.talk.theme %></p>
+  <p><%= speaker.talk.required_knowledge %></p>
+<% end %>
+

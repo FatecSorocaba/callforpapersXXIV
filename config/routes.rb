@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   root 'speakers#new'
 
-  resources :speakers, param: :uuid, only: [:new, :create, :edit, :update]
   resources :invites, only: :new do
     collection do
       post :send_email
     end
   end
+
+  devise_for :admins, controllers: {registrations: 'admins/registrations'}
+
+  resources :speakers, param: :uuid, only: [:index, :new, :create, :edit, :update]
 end

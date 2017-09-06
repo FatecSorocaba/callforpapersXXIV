@@ -13,6 +13,14 @@
     <header class="header">
       <h1>Call 4 Papers</h1>
     </header>
+    <% if admin_signed_in? %>
+      <section>
+        Logged as: <%= current_admin.email %>
+        <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
+        <%= link_to 'New Admin', new_admin_registration_path %>
+        <%= link_to 'Speakers', speakers_path %>
+      </section>
+    <% end %>
     <section class="about">
       <h2>Sobre a Semana da Tecnologia</h2>
       <p>A Semana da Tecnologia é um evento anual da Faculdade de Tecnologia de Sorocaba (FATEC) que ocorre no mês de outubro, nele são
@@ -25,6 +33,8 @@
       </p>
     </section>
     <div class="body-content">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
     <footer class="footer">
