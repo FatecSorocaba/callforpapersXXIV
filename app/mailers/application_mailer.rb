@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'semanadetecnologia@fatecsonoreply.com'
+  default from: 'semana-de-tecnologia-fatecso@cfp.semanadetecnologiafatecso.tk'
   layout 'mailer'
 end
