@@ -1,15 +1,35 @@
-<% @speakers.each do |speaker|  %>
-  <p><%= speaker.name %></p>
-  <p><%= speaker.email %></p>
-  <p><%= image_tag speaker.picture %></p>
-  <p><%= speaker.company %></p>
-  <p><%= speaker.biography %></p>
-  <p><%= speaker.website %></p>
-  <p><%= speaker.uuid %></p>
-  <p><%= speaker.id %></p>
-  <p><%= speaker.talk.title %></p>
-  <p><%= speaker.talk.description %></p>
-  <p><%= speaker.talk.theme %></p>
-  <p><%= speaker.talk.required_knowledge %></p>
-<% end %>
+<h1>Palestras Enviadas</h1>
 
+<table class="table table-hover talks" style="border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th>Palestrante</th>
+      <th>E-mail</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody id ="accordion" class="accordion-group">
+    <% @speakers.each_with_index do |speaker, index|  %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= speaker.talk.title %></td>
+      <td><%= speaker.name %></td>
+      <td><%= speaker.email %></td>
+      <td data-toggle="collapse" data-target="#talkDesc<%= index %>" class="accordion-toggle" data-parent="#accordion"><button type="button" class="btn btn-secondary btn-sm"><i class="fa fa-chevron-down" aria-hidden="true"></i></button></td>
+    </tr>
+    <tr >
+      <td colspan="5" class="hidden-row">
+        <div class="accordian-body collapse detail" id="talkDesc<%= index %>">
+          <p><strong>Descrição:</strong> <%= speaker.talk.description %></p>
+          <p>
+            <span class="badge badge-secondary"><strong>Tema:</strong> <%= speaker.talk.theme %></span>
+            <span class="badge badge-secondary"><strong>Nível:</strong> <%= speaker.talk.required_knowledge %></span>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
