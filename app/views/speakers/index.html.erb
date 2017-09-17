@@ -24,9 +24,22 @@
       <td colspan="5" class="hidden-row">
         <div class="accordian-body collapse detail" id="talkDesc<%= index %>">
           <p><strong>Descrição:</strong> <%= speaker.talk.description %></p>
+          <p><strong>Biografia:</strong> <%= speaker.biography %></p>
+          <p><strong><%= link_to 'Foto', speaker.picture.url %></strong></p>
+          <% unless speaker.website %>
+            <p><strong>Website:</strong> <%= speaker.website %></p>
+          <% end %>
+
           <p>
             <span class="badge badge-secondary"><strong>Tema:</strong> <%= speaker.talk.theme %></span>
             <span class="badge badge-secondary"><strong>Nível:</strong> <%= speaker.talk.required_knowledge %></span>
+            <span class="badge badge-secondary"><strong>Tipo:</strong> <%= speaker.talk.kind %></span>
+            <% unless speaker.company.empty? %>
+              <span class="badge badge-secondary"><strong>Empresa:</strong> <%= speaker.company %></span>
+            <% end %>
+          </p>
+
+          <p><strong><%= link_to 'Editar', edit_speaker_path(speaker) %></strong></p>
         </div>
       </td>
     </tr>
