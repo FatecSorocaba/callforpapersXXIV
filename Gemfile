@@ -22,8 +22,6 @@ gem 'turbolinks', '~> 5'
 
 gem 'carrierwave'
 
-gem 'mailgun-ruby'
-
 gem 'devise'
 
 gem 'bootstrap', '~> 4.0.0.beta'
