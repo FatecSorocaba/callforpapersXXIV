@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   devise_for :admins, controllers: {registrations: 'admins/registrations'}
 
-  resources :speakers, param: :uuid, only: [:index, :new, :create, :edit, :update]
+  resources :speakers, param: :uuid, only: [:index, :create, :edit, :update]
 end
